@@ -24,15 +24,14 @@ function App() {
   const todos = useSelector((state) => state.todos.list);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+
   const onAddTodo = async () => {
-    await waitTwoSeconds();
-    dispatch(addTodo({ id, title, body }));
+    dispatch(__addToDo({ id, title, body }));
     resetInputs();
   };
 
   const onDeleteTodo = async (id) => {
-    await waitTwoSeconds();
-    dispatch(deleteTodo(id));
+    dispatch(__deleteTodo(id));
   };
 
   const resetInputs = () => {

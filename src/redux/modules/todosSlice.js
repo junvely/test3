@@ -7,12 +7,18 @@ import { waitTwoSeconds } from "../../utils";
 
 export const __addToDo = createAsyncThunk(
   "__addToDo",
-  async (payload, thunkAPI) => {}
+  async (payload, thunkAPI) => {
+    await waitTwoSeconds();
+    thunkAPI.dispatch(addTodo(payload));
+  }
 );
 
 export const __deleteTodo = createAsyncThunk(
   "__deleteToDo",
-  async (payload, thunkAPI) => {}
+  async (payload, thunkAPI) => {
+    await waitTwoSeconds();
+    thunkAPI.dispatch(deleteTodo(payload));
+  }
 );
 
 const initialState = {
